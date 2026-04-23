@@ -1,9 +1,9 @@
 import { AuthorModel } from '../models/authorModel.js';
 
 export const AuthorController = {
+  // 1. Fungsi Get All (dengan fitur search)
   async getAuthors(req, res) {
     try {
-      // Menangkap query parameter ?name=
       const searchName = req.query.name || ''; 
       const authors = await AuthorModel.getAll(searchName);
       res.json(authors);
@@ -12,8 +12,18 @@ export const AuthorController = {
     }
   },
   
-  // ... (fungsi addAuthor tetap sama) ...
+  // 2. Fungsi Add Author (Ini yang tadi hilang / tertimpa)
+  async addAuthor(req, res) {
+    try {
+      const { name, nationality } = req.body;
+      const author = await AuthorModel.create(name, nationality);
+      res.status(201).json(author);
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
+  },
 
+  // 3. Fungsi Update Author
   async updateAuthor(req, res) {
     try {
       const { id } = req.params;
@@ -25,6 +35,7 @@ export const AuthorController = {
     }
   },
 
+  // 4. Fungsi Delete Author
   async deleteAuthor(req, res) {
     try {
       const { id } = req.params;
