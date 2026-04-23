@@ -22,5 +22,17 @@ export const LoanController = {
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
+  },
+  async returnLoan(req, res) {
+    try {
+      const { id } = req.params; // Mendapatkan ID peminjaman dari URL
+      const returnedLoan = await LoanModel.returnBook(id);
+      res.json({
+        message: "Buku berhasil dikembalikan!",
+        data: returnedLoan
+      });
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
   }
 };
