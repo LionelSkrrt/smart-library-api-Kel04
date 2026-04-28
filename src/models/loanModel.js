@@ -43,6 +43,60 @@ export const LoanModel = {
     return result.rows;
   },
 
+  async getTopBorrowers() {
+    const query = `
+      SELECT
+        m.id          AS member_id,
+        m.full_name,
+        m.email,
+        m.member_type,
+        COUNT(l.id)::int                                   AS total_loans,
+        MAX(l.loan_date)                                   AS last_loan_date,
+        (
+          SELECT b2.title
+          FROM loans l2
+          JOIN books b2 ON l2.book_id = b2.id
+          WHERE l2.member_id = m.id
+          GROUP BY b2.title
+          ORDER BY COUNT(*) DESC
+          LIMIT 1
+        )                                                  AS favorite_book_title,
+        (
+          SELECT COUNT(*)::int
+          FROM loans l3
+          JOIN books b3 ON l3.book_id = b3.id
+          WHERE l3.member_id = m.id
+            AND b3.title = (
+              SELECT b4.title
+              FROM loans l4
+              JOIN books b4 ON l4.book_id = b4.id
+              WHERE l4.member_id = m.id
+              GROUP BY b4.title
+              ORDER BY COUNT(*) DESC
+              LIMIT 1
+            )
+        )                                                  AS favorite_book_count
+      FROM members m
+      JOIN loans l ON l.member_id = m.id
+      GROUP BY m.id, m.full_name, m.email, m.member_type
+      ORDER BY total_loans DESC
+      LIMIT 3
+    `;
+    const result = await pool.query(query);
+    return result.rows.map(row => ({
+      member_id:    row.member_id,
+      full_name:    row.full_name,
+      email:        row.email,
+      member_type:  row.member_type,
+      total_loans:  row.total_loans,
+      last_loan_date: row.last_loan_date,
+      favorite_book: {
+        title:          row.favorite_book_title,
+        times_borrowed: row.favorite_book_count
+      }
+    }));
+  },
+
   async returnBook(loan_id) {
     const client = await pool.connect();
     try {
