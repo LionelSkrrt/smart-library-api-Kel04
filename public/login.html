@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masuk — ByteBid</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="navbar-logo"><span>Byte</span>Bid</a>
+    <div class="navbar-links">
+      <a href="index.html">Beranda</a>
+      <a href="auctions.html">Lelang</a>
+      <a href="how-it-works.html">Cara Kerja</a>
+      <a href="platform.html">Platform</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="login.html" class="btn btn-ghost">Masuk</a>
+      <a href="register.html" class="btn btn-primary">Daftar</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Beranda</a>
+    <a href="auctions.html">Lelang</a>
+    <a href="how-it-works.html">Cara Kerja</a>
+    <a href="register.html" style="color:var(--accent)">Daftar</a>
+  </div>
+</nav>
+
+<div class="auth-wrapper">
+  <div class="auth-box">
+    <div class="auth-logo"><span>Byte</span>Bid</div>
+    <p class="auth-sub">Selamat datang kembali! Masuk untuk melanjutkan.</p>
+
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label class="form-label" for="email">Alamat Email</label>
+        <input class="form-input" type="email" id="email" placeholder="johndoe@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">
+          <span>Password</span>
+          <a href="#" style="float:right;color:var(--accent);font-size:.8rem" onclick="showToast('Fitur lupa password segera hadir!','error');return false">Lupa Password?</a>
+        </label>
+        <div class="password-wrapper">
+          <input class="form-input" type="password" id="password" placeholder="Masukkan password Anda" required />
+          <button type="button" class="password-toggle" onclick="togglePass(this)">👁</button>
+        </div>
+      </div>
+
+      <div class="form-group" style="display:flex;align-items:center;gap:10px">
+        <input type="checkbox" id="remember" style="accent-color:var(--accent)" />
+        <label for="remember" style="font-size:.83rem;color:var(--text-muted);cursor:pointer">Ingat saya di perangkat ini</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:8px">Masuk</button>
+    </form>
+
+    <div class="auth-footer">
+      Belum punya akun? <a href="register.html">Daftar gratis</a>
+    </div>
+
+    <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);text-align:center">
+      <p style="font-size:.8rem;color:var(--text-muted);margin-bottom:12px">Atau masuk dengan</p>
+      <div style="display:flex;gap:10px;justify-content:center">
+        <button class="btn btn-outline" style="flex:1;font-size:.85rem" onclick="showToast('Fitur Google login segera hadir!','error')">🔍 Google</button>
+        <button class="btn btn-outline" style="flex:1;font-size:.85rem" onclick="showToast('Fitur Facebook login segera hadir!','error')">📘 Facebook</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+function togglePass(btn) {
+  const input = document.getElementById('password');
+  if (input.type === 'password') { input.type = 'text'; btn.textContent = '🙈'; }
+  else { input.type = 'password'; btn.textContent = '👁'; }
+}
+
+function handleLogin(e) {
+  e.preventDefault();
+  showToast('Berhasil masuk! Selamat datang.', 'success');
+  setTimeout(() => window.location.href = 'auctions.html', 1200);
+}
+</script>
+</body>
+</html>

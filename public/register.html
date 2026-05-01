@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar — ByteBid</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="navbar-logo"><span>Byte</span>Bid</a>
+    <div class="navbar-links">
+      <a href="index.html">Beranda</a>
+      <a href="auctions.html">Lelang</a>
+      <a href="how-it-works.html">Cara Kerja</a>
+      <a href="platform.html">Platform</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="login.html" class="btn btn-ghost">Masuk</a>
+      <a href="register.html" class="btn btn-primary">Daftar</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Beranda</a>
+    <a href="auctions.html">Lelang</a>
+    <a href="how-it-works.html">Cara Kerja</a>
+    <a href="login.html">Masuk</a>
+  </div>
+</nav>
+
+<div class="auth-wrapper">
+  <div class="auth-box">
+    <div class="auth-logo"><span>Byte</span>Bid</div>
+    <p class="auth-sub">Buat akun baru dan mulai memenangkan lelang!</p>
+
+    <form id="registerForm" onsubmit="handleRegister(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="firstName">Nama Depan</label>
+          <input class="form-input" type="text" id="firstName" placeholder="John" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="lastName">Nama Belakang</label>
+          <input class="form-input" type="text" id="lastName" placeholder="Doe" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Alamat Email</label>
+        <input class="form-input" type="email" id="email" placeholder="johndoe@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="phone">Nomor Telepon</label>
+        <input class="form-input" type="tel" id="phone" placeholder="+62 812 3456 7890" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <div class="password-wrapper">
+          <input class="form-input" type="password" id="password" placeholder="Min. 8 karakter" required />
+          <button type="button" class="password-toggle" onclick="togglePass('password', this)">👁</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="confirmPassword">Konfirmasi Password</label>
+        <div class="password-wrapper">
+          <input class="form-input" type="password" id="confirmPassword" placeholder="Ulangi password Anda" required />
+          <button type="button" class="password-toggle" onclick="togglePass('confirmPassword', this)">👁</button>
+        </div>
+      </div>
+
+      <div class="form-group" style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px">
+        <input type="checkbox" id="agree" required style="margin-top:3px;accent-color:var(--accent)" />
+        <label for="agree" style="font-size:.83rem;color:var(--text-muted);cursor:pointer">
+          Saya setuju dengan <a href="#" style="color:var(--accent)">Syarat & Ketentuan</a> dan <a href="#" style="color:var(--accent)">Kebijakan Privasi</a> ByteBid
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full btn-lg">Buat Akun</button>
+    </form>
+
+    <div class="auth-footer">
+      Sudah punya akun? <a href="login.html">Masuk sekarang</a>
+    </div>
+
+    <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);text-align:center">
+      <p style="font-size:.8rem;color:var(--text-muted);margin-bottom:12px">Atau daftar dengan</p>
+      <div style="display:flex;gap:10px;justify-content:center">
+        <button class="btn btn-outline" style="flex:1;font-size:.85rem" onclick="showToast('Fitur Google login segera hadir!','error')">🔍 Google</button>
+        <button class="btn btn-outline" style="flex:1;font-size:.85rem" onclick="showToast('Fitur Facebook login segera hadir!','error')">📘 Facebook</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+function togglePass(id, btn) {
+  const input = document.getElementById(id);
+  if (input.type === 'password') { input.type = 'text'; btn.textContent = '🙈'; }
+  else { input.type = 'password'; btn.textContent = '👁'; }
+}
+
+function handleRegister(e) {
+  e.preventDefault();
+  const pw  = document.getElementById('password').value;
+  const cpw = document.getElementById('confirmPassword').value;
+  if (pw !== cpw) { showToast('Password tidak cocok!', 'error'); return; }
+  if (pw.length < 8) { showToast('Password minimal 8 karakter!', 'error'); return; }
+  showToast('Akun berhasil dibuat! Silahkan masuk.', 'success');
+  setTimeout(() => window.location.href = 'login.html', 1500);
+}
+</script>
+</body>
+</html>

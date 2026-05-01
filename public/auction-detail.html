@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MacBook Pro M3 — ByteBid</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="navbar-logo"><span>Byte</span>Bid</a>
+    <div class="navbar-links">
+      <a href="index.html">Beranda</a>
+      <a href="auctions.html" class="active">Lelang</a>
+      <a href="how-it-works.html">Cara Kerja</a>
+      <a href="platform.html">Platform</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="login.html" class="btn btn-ghost">Masuk</a>
+      <a href="register.html" class="btn btn-primary">Daftar</a>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Beranda</a>
+    <a href="auctions.html">Lelang</a>
+    <a href="how-it-works.html">Cara Kerja</a>
+    <a href="platform.html">Platform</a>
+    <a href="login.html">Masuk</a>
+    <a href="register.html" style="color:var(--accent)">Daftar</a>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:36px;padding-bottom:60px">
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Beranda</a>
+    <span class="sep">/</span>
+    <a href="auctions.html">Lelang Aktif</a>
+    <span class="sep">/</span>
+    <span class="current">MacBook Pro 14" M3 Pro</span>
+  </div>
+
+  <div class="detail-layout">
+    <!-- LEFT: Item Info -->
+    <div>
+      <div class="detail-img">💻</div>
+
+      <div class="detail-info">
+        <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+          <span class="badge badge-red">Elektronik</span>
+          <span class="badge" style="background:rgba(0,230,118,.1);color:var(--green);border:1px solid rgba(0,230,118,.3)">● LIVE</span>
+          <span class="badge" style="background:rgba(229,57,53,.08);color:var(--accent);border:1px solid rgba(229,57,53,.2)">Kondisi: Sangat Baik</span>
+        </div>
+        <h1 class="detail-title">MacBook Pro 14" M3 Pro — 2024</h1>
+
+        <div class="detail-meta">
+          <div class="meta-item">Penjual: <strong>TechShop_ID ✓</strong></div>
+          <div class="meta-item">Lokasi: <strong>Jakarta Selatan</strong></div>
+          <div class="meta-item">Pengiriman: <strong>JNE / J&T / SiCepat</strong></div>
+        </div>
+
+        <p class="detail-desc">
+          MacBook Pro 14 inci dengan chip M3 Pro (12-core CPU, 18-core GPU), RAM 18GB, SSD 512GB. Warna Space Black. Dibeli Maret 2024, kondisi mulus 98%, lengkap dengan box dan charger original.
+          <br><br>
+          Spesifikasi lengkap: macOS Sonoma 14.4, layar Liquid Retina XDR 3024x1964px, baterai masih 96% health, sudah dipasang screen protector sejak hari pertama.
+        </p>
+
+        <!-- ITEM SPECS -->
+        <div style="margin-top:24px">
+          <h3 style="font-size:.95rem;font-weight:600;margin-bottom:14px">Detail Spesifikasi</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px">
+              <div style="font-size:.72rem;color:var(--text-muted);margin-bottom:2px">Chip</div>
+              <div style="font-size:.88rem;font-weight:500">Apple M3 Pro</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px">
+              <div style="font-size:.72rem;color:var(--text-muted);margin-bottom:2px">RAM</div>
+              <div style="font-size:.88rem;font-weight:500">18GB Unified</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px">
+              <div style="font-size:.72rem;color:var(--text-muted);margin-bottom:2px">Storage</div>
+              <div style="font-size:.88rem;font-weight:500">512GB SSD</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px">
+              <div style="font-size:.72rem;color:var(--text-muted);margin-bottom:2px">Layar</div>
+              <div style="font-size:.88rem;font-weight:500">14" Liquid Retina XDR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Bidding Panel -->
+    <div>
+      <!-- TIMER -->
+      <div class="timer-box">
+        <div class="timer-label">⏱ Lelang Berakhir Dalam</div>
+        <div class="timer-digits" id="timerDisplay">
+          <div class="timer-unit">
+            <span class="timer-num" data-unit="h">02</span>
+            <div class="timer-unit-label">JAM</div>
+          </div>
+          <div class="timer-sep">:</div>
+          <div class="timer-unit">
+            <span class="timer-num" data-unit="m">14</span>
+            <div class="timer-unit-label">MENIT</div>
+          </div>
+          <div class="timer-sep">:</div>
+          <div class="timer-unit">
+            <span class="timer-num" data-unit="s">35</span>
+            <div class="timer-unit-label">DETIK</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <div style="font-size:.78rem;color:var(--text-muted)">Mulai: 28 Apr 2025, 10:00</div>
+          <div style="font-size:.78rem;color:var(--text-muted)">Berakhir: 01 Mei 2025, 12:14</div>
+        </div>
+      </div>
+
+      <!-- BID BOX -->
+      <div class="bid-box">
+        <div class="current-bid">
+          <div class="label">Penawaran Tertinggi Saat Ini</div>
+          <div class="amount" id="currentBid">Rp 18.500.000</div>
+          <div style="font-size:.78rem;color:var(--text-muted);margin-top:4px">oleh <strong style="color:var(--text-primary)">Us**to</strong> · 3 menit lalu</div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;margin-bottom:16px;padding:10px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+          <div style="text-align:center">
+            <div style="font-size:.72rem;color:var(--text-muted)">Harga Awal</div>
+            <div style="font-size:.9rem;font-weight:600">Rp 12.000.000</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:.72rem;color:var(--text-muted)">Penawar</div>
+            <div style="font-size:.9rem;font-weight:600">47 orang</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:.72rem;color:var(--text-muted)">Kelipatan Min.</div>
+            <div style="font-size:.9rem;font-weight:600">Rp 100.000</div>
+          </div>
+        </div>
+
+        <div class="bid-form">
+          <label style="font-size:.82rem;color:var(--text-muted);display:block;margin-bottom:6px">Penawaran Anda (min. Rp 18.600.000)</label>
+          <input class="form-input" type="number" id="bidInput" placeholder="18600000" min="18600000" step="100000" />
+
+          <div style="font-size:.78rem;color:var(--text-muted);margin-bottom:10px">Tambah cepat:</div>
+          <div class="bid-increment">
+            <button class="bid-inc-btn" onclick="addBid(100000)">+100K</button>
+            <button class="bid-inc-btn" onclick="addBid(250000)">+250K</button>
+            <button class="bid-inc-btn" onclick="addBid(500000)">+500K</button>
+            <button class="bid-inc-btn" onclick="addBid(1000000)">+1Jt</button>
+            <button class="bid-inc-btn" onclick="addBid(2000000)">+2Jt</button>
+          </div>
+
+          <button class="btn btn-primary btn-full btn-lg" onclick="submitBid()">
+            🔨 Ajukan Penawaran
+          </button>
+          <p style="font-size:.75rem;color:var(--text-muted);text-align:center;margin-top:10px">
+            Dengan mengajukan penawaran, Anda menyetujui <a href="#" style="color:var(--accent)">Syarat Lelang</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- AUTO BID -->
+      <div class="bid-box" style="padding:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div>
+            <div style="font-size:.88rem;font-weight:600">🤖 Auto-Bid</div>
+            <div style="font-size:.75rem;color:var(--text-muted)">Sistem bertarung otomatis untuk Anda</div>
+          </div>
+          <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+            <input type="checkbox" id="autoBidToggle" style="opacity:0;width:0;height:0" onchange="toggleAutoBid(this)">
+            <span id="autoBidSlider" style="position:absolute;inset:0;background:var(--border);border-radius:12px;transition:.2s"></span>
+            <span id="autoBidThumb" style="position:absolute;left:3px;top:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:.2s"></span>
+          </label>
+        </div>
+        <div id="autoBidPanel" style="display:none">
+          <label style="font-size:.78rem;color:var(--text-muted);display:block;margin-bottom:6px">Batas Maksimum Auto-Bid</label>
+          <input class="form-input" type="number" placeholder="Contoh: 25000000" style="margin-bottom:10px" />
+          <button class="btn btn-outline btn-full" onclick="showToast('Auto-Bid diaktifkan!','success')">Aktifkan Auto-Bid</button>
+        </div>
+      </div>
+
+      <!-- BID HISTORY -->
+      <div class="history-box" style="margin-top:20px">
+        <div class="history-title">🕐 Penawaran Terakhir</div>
+        <div class="history-list" id="historyList">
+          <div class="history-item">
+            <div class="avatar">US</div>
+            <div class="history-meta">
+              <div class="history-user">Us**to <span class="badge badge-red history-badge" style="margin-left:4px">Tertinggi</span></div>
+              <div class="history-time">3 menit lalu</div>
+            </div>
+            <div class="history-amount">Rp 18.500.000</div>
+          </div>
+          <div class="history-item">
+            <div class="avatar" style="background:rgba(0,230,118,.1);color:var(--green)">BY</div>
+            <div class="history-meta">
+              <div class="history-user">By**di</div>
+              <div class="history-time">8 menit lalu</div>
+            </div>
+            <div class="history-amount">Rp 18.200.000</div>
+          </div>
+          <div class="history-item">
+            <div class="avatar">RN</div>
+            <div class="history-meta">
+              <div class="history-user">Ri**na</div>
+              <div class="history-time">15 menit lalu</div>
+            </div>
+            <div class="history-amount">Rp 17.900.000</div>
+          </div>
+          <div class="history-item">
+            <div class="avatar" style="background:rgba(147,51,234,.1);color:#a855f7">AH</div>
+            <div class="history-meta">
+              <div class="history-user">Ah**mad</div>
+              <div class="history-time">22 menit lalu</div>
+            </div>
+            <div class="history-amount">Rp 17.500.000</div>
+          </div>
+          <div class="history-item">
+            <div class="avatar">DW</div>
+            <div class="history-meta">
+              <div class="history-user">Dw**i</div>
+              <div class="history-time">31 menit lalu</div>
+            </div>
+            <div class="history-amount">Rp 17.000.000</div>
+          </div>
+          <div class="history-item">
+            <div class="avatar" style="background:rgba(0,230,118,.1);color:var(--green)">FK</div>
+            <div class="history-meta">
+              <div class="history-user">Fa**ki</div>
+              <div class="history-time">45 menit lalu</div>
+            </div>
+            <div class="history-amount">Rp 16.500.000</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:14px">
+          <button class="btn btn-ghost" style="font-size:.8rem" onclick="showToast('Memuat riwayat lebih banyak...')">Lihat Semua Riwayat (47)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIMILAR AUCTIONS -->
+  <div style="margin-top:60px">
+    <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:24px">Lelang Serupa yang Mungkin Anda Suka</h2>
+    <div class="auctions-grid">
+      <div class="card">
+        <div class="card-img">📱</div>
+        <div class="card-body">
+          <div class="badge badge-red" style="margin-bottom:8px">Elektronik</div>
+          <div class="card-title">iPhone 15 Pro Max 256GB</div>
+          <div class="card-bid">
+            <div><div class="bid-label">Penawaran saat ini</div><div class="bid-amount">Rp 14.200.000</div></div>
+            <div class="bid-timer">⏱ 3j 22m</div>
+          </div>
+          <a href="auction-detail.html" class="btn btn-primary btn-full" style="margin-top:14px">Lihat & Tawar</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🎮</div>
+        <div class="card-body">
+          <div class="badge badge-red" style="margin-bottom:8px">Elektronik</div>
+          <div class="card-title">PlayStation 5 + 3 Games Bundle</div>
+          <div class="card-bid">
+            <div><div class="bid-label">Penawaran saat ini</div><div class="bid-amount">Rp 7.100.000</div></div>
+            <div class="bid-timer">⏱ 6j 15m</div>
+          </div>
+          <a href="auction-detail.html" class="btn btn-primary btn-full" style="margin-top:14px">Lihat & Tawar</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">💻</div>
+        <div class="card-body">
+          <div class="badge badge-red" style="margin-bottom:8px">Elektronik</div>
+          <div class="card-title">Dell XPS 15 i9 — RTX 4070</div>
+          <div class="card-bid">
+            <div><div class="bid-label">Penawaran saat ini</div><div class="bid-amount">Rp 16.800.000</div></div>
+            <div class="bid-timer">⏱ 11j 00m</div>
+          </div>
+          <a href="auction-detail.html" class="btn btn-primary btn-full" style="margin-top:14px">Lihat & Tawar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span>Byte</span>Bid</div>
+        <p>Platform lelang online terpercaya di Indonesia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="auctions.html">Daftar Lelang</a></li>
+          <li><a href="how-it-works.html">Cara Kerja</a></li>
+          <li><a href="platform.html">Fitur</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Akun</h4>
+        <ul>
+          <li><a href="login.html">Masuk</a></li>
+          <li><a href="register.html">Daftar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Dukungan</h4>
+        <ul>
+          <li><a href="how-it-works.html#faq">FAQ</a></li>
+          <li><a href="#">Hubungi Kami</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ByteBid. Hak cipta dilindungi.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Start real countdown (2h 14m from now)
+const endTime = Date.now() + (2 * 3600 + 14 * 60 + 35) * 1000;
+startCountdown(endTime, document.getElementById('timerDisplay'));
+
+let currentBidVal = 18500000;
+
+function addBid(amount) {
+  const input = document.getElementById('bidInput');
+  const current = parseInt(input.value) || (currentBidVal + 100000);
+  input.value = current + amount;
+}
+
+function submitBid() {
+  const input = document.getElementById('bidInput');
+  const val = parseInt(input.value);
+  const minBid = currentBidVal + 100000;
+
+  if (!val) { showToast('Masukkan jumlah penawaran Anda!', 'error'); return; }
+  if (val < minBid) { showToast(`Penawaran minimal Rp ${minBid.toLocaleString('id-ID')}`, 'error'); return; }
+
+  currentBidVal = val;
+  document.getElementById('currentBid').textContent = 'Rp ' + val.toLocaleString('id-ID');
+
+  // Add to history
+  const list = document.getElementById('historyList');
+  const item = document.createElement('div');
+  item.className = 'history-item';
+  item.innerHTML = `
+    <div class="avatar" style="background:rgba(229,57,53,.12);color:var(--accent)">AN</div>
+    <div class="history-meta">
+      <div class="history-user">An**da <span class="badge badge-red history-badge" style="margin-left:4px">Tertinggi</span></div>
+      <div class="history-time">Baru saja</div>
+    </div>
+    <div class="history-amount">Rp ${val.toLocaleString('id-ID')}</div>
+  `;
+  // Remove "Tertinggi" badge from old top
+  list.querySelectorAll('.badge-red.history-badge').forEach(b => b.remove());
+  list.insertBefore(item, list.firstChild);
+
+  input.value = '';
+  showToast(`Penawaran Rp ${val.toLocaleString('id-ID')} berhasil diajukan!`, 'success');
+}
+
+function toggleAutoBid(checkbox) {
+  const panel = document.getElementById('autoBidPanel');
+  const slider = document.getElementById('autoBidSlider');
+  const thumb = document.getElementById('autoBidThumb');
+  if (checkbox.checked) {
+    panel.style.display = 'block';
+    slider.style.background = 'var(--accent)';
+    thumb.style.left = '23px';
+  } else {
+    panel.style.display = 'none';
+    slider.style.background = 'var(--border)';
+    thumb.style.left = '3px';
+  }
+}
+</script>
+</body>
+</html>
